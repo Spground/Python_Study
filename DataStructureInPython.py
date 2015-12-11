@@ -138,13 +138,7 @@ martrix = [
         [5, 6, 7, 8],
         [9, 10, 11, 12]
         ]
-martrix = [[row[i] for row in martrix] for i in range(len(martrix[0]))];
+martrix = [[row[i] for row in martrix] for i in range(len(martrix))];
 print(martrix);
-
-#方式二
-transposed = [];
-for i in range(len(martrix[0])):
-        transposed.append([row[i] for row in martrix]);
-print("transposed is ", transposed);
 
 
