@@ -160,17 +160,63 @@ print(a);
 a = {x for x in 'abjbjufbnhsdeiufhui' if x not in 'abc'};
 print(a);
 
-#字典
-tel = {"Tom":15123, "Tony":123, "Lincon":5456, 110:120};
+#字典 dictionary == dict
+tel = {"Tom":15123, "Tony":123, "Lincon":5456, "110":120};
 print("TEl type is ", type(tel), "tel is ", tel);
 
-print(tel[110]);
+print(tel["110"]);
 
-#keys
+#dict keys
 keys = tel.keys();
 print(keys);
 
 keysList = list(keys);
 print(keysList);
 print(keysList[0]);
+
+sorted(keysList);
+print(keysList);
+
+#test existence of a element
+print("Tom exists ? ", "Tom" in tel);
+
+#构造函数dict直接从键值对元组列表中创建字典
+#并且也可以用推导模式创建任意键值对
+tel = dict([("Tom", 4139), ("Tony", 1123), ("Gucci", 9563)]);
+print(tel);
+
+tel = {x:x ** x for x in range(0,5)};
+print(tel);
+
+tel = dict(Tom=1203, Tonu=1203, Towrads=1230);
+print(tel);
+
+#dict 的遍历技巧 items()
+knights = {'A':'a', "B":"b", "C":"c", "D":"d"};
+for k, v in knights.items():
+        print(k, "==>", v, end="\n");
+
+#遍历序列(index是数字，顺序的)
+for i, v in enumerate(["tic", "tac", "toe"]):
+        print(i, v);
+
+questions = ['name', 'quest', 'favorite color'];
+answers = ['lancelot', 'the holy grail', 'blue'];
+
+for q , a in zip(questions, answers):
+        print('What is your {0}? It is {1}.'.format(q, a));
+
+#反向遍历
+for i in reversed(range(0, 10)):
+        print(i);
+
+#顺序遍历一个序列 使用sorted()函数返回一个已排序的序列，并不修改原值
+basket = ['apple', 'orange', 'apple', 'pear', 'oeange', 'banana'];
+for f in sorted(set(basket)):
+        print(f);
+print(basket);
+
+for f in sorted(basket):
+        print(f);
+print(basket);
 
