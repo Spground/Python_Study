@@ -141,4 +141,36 @@ martrix = [
 martrix = [[row[i] for row in martrix] for i in range(len(martrix))];
 print(martrix);
 
+#tuple & sequence
+t = (123, 54321, "hello");
+print(t[0]);
+print(t);
+u = (t, t);
+print(u);
+
+#set
+basket = {"apple", "orange", "apple", "pear"};
+print(basket);
+print("apple" in basket);
+
+a = set("abgfagregrwaegrega");
+print(a);
+
+#集合也支持推导模式
+a = {x for x in 'abjbjufbnhsdeiufhui' if x not in 'abc'};
+print(a);
+
+#字典
+tel = {"Tom":15123, "Tony":123, "Lincon":5456, 110:120};
+print("TEl type is ", type(tel), "tel is ", tel);
+
+print(tel[110]);
+
+#keys
+keys = tel.keys();
+print(keys);
+
+keysList = list(keys);
+print(keysList);
+print(keysList[0]);
 
