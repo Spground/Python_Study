@@ -59,3 +59,65 @@ for name, phone in table.items():
 print("PI is %.3f"%math.pi);
 
 #文件
+#读写文件
+#opne()将返回一个file对象 open(filename, mode)
+f = open("f.txt", 'r+');
+str = f.read();#read all content, read(size)
+print("The content of the file is :", str);
+
+#move file pointer to start
+f.seek(0);
+str = f.read(2);
+print("The first 2 byte is :", str);
+
+f.seek(0);
+str = f.readline();
+print("The first line is :", str);
+
+#wirte
+count = f.write("\n3.Hello, DUT!\n");
+print("The count of char wrote is ", count);
+f.close();
+
+#seek(offset, from_what) from_what 0开头位置 1当前位置  2结尾位置
+
+#-----------------------pickle模块----------------------------
+#python的pickle模块实现了基本的数据序列和反序列化
+#通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中，永久存储
+#反之亦然
+#基本接口 pickle.dump(obj, file, [, protocol])
+
+
+#使用pickle模块将数据对象保存到文件
+import pickle
+obj = {'a':[1, 2.0, 3, 4+6j],
+        'b':("string", u"Unicode string"),
+       'c':None
+       };
+print(type(obj));
+
+output = open('obj.pkl', 'wb');
+pickle.dump(obj, output);
+output.close();
+
+#反序列化
+pkl_file = open("obj.pkl", "rb");
+aobj = pickle.load(pkl_file);
+print("The type of loading obj is :", type(aobj));
+print(aobj);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
